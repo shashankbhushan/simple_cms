@@ -1,5 +1,5 @@
 class Section < ApplicationRecord
 
-	has_many: section_eidt
-	_
+	has_many :section_edits
+	has_many :editors, :through => :section_edits, :class_name => "AdminUser"
 end
