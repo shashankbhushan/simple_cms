@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple CMS | <%= @page_title || "Admin" %></title>
+     <%= stylesheet_link_tag('/assets/stylesheets/application.css', :media => 'all' )%>
+  </head>
+  	<div id="header">
+  		<h1>Simple CMS Admin</h1>
+  	</div>
+  	<div id="main">
+  		<% if !flash[:notice].blank? %>
+			<dir class="notice">
+				<%= flash[:notice] %>
+			</dir>
+		<% end %>
+  		<div id="content">
+  			<%= yield %>
+  		</div>
+  	</div>
+  <body>
+  <div id="footer">
+  	<p id="copyright"> &copy; shashankbhushan.com</p>
+  </div>
+  </body>
+</html>
